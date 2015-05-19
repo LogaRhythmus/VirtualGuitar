@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirGuitar
 {
-    class MidOutput
+    class MidiOutput
     {
 
     }
