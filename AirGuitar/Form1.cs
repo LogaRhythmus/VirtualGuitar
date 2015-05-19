@@ -23,6 +23,11 @@ namespace AirGuitar
         StreamReader srReceiver;
         private Thread ReceiveAndroid;
 
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
         public void connectAndroid()
         {
             tlsClient = new TcpListener(7777);
@@ -30,15 +35,12 @@ namespace AirGuitar
             tcpClient = tlsClient.AcceptTcpClient();
             srReceiver = new System.IO.StreamReader(tcpClient.GetStream());
 
-            thrSender = new Thread(receive);
-            thrSender.IsBackground = true;
-            thrSender.Start();
-            //bla
+            ReceiveAndroid = new Thread(receive);
+            ReceiveAndroid.IsBackground = true;
+            ReceiveAndroid.Start();
         }
-
-        public Form1()
+        private void receive()
         {
-            InitializeComponent();
         }
     }
 }
