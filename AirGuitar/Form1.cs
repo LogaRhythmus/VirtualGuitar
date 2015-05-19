@@ -33,6 +33,7 @@ namespace AirGuitar
             thrSender = new Thread(receive);
             thrSender.IsBackground = true;
             thrSender.Start();
+            //bla
         }
 
         public Form1()
